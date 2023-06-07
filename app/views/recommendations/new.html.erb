@@ -1,10 +1,10 @@
 <h1>Recommendations#new</h1>
 <p>Find me in app/views/recommendations/new.html.erb</p>
 
-<form action="/recommendations" method="post">
+<form action="/recommendations" method="post" data-controller="autocomplete">
   <div class="step_one">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="text" name='artists' placeholder="Search artists"> <br>
+    <input type="text" name='artists' placeholder="Search artists" data-action="keyup->autocomplete#artistsSearch" data-autocomplete-target="artists"> <br>
     <input type="text" name="songs" placeholder="Search songs"> <br>
     <input type="text" name="genres" placeholder="Search genres"> <br>
 

@@ -15,6 +15,11 @@ class RecommendationsController < ApplicationController
   end
 
   def search_artist
+    artists = params[:artist]
+    @result = RSpotify::Artist.search(artists, limit: 5).to_json
+    respond_to do |format|
+      format.json { render json: @result }
+    end
   end
 
   def search_song
