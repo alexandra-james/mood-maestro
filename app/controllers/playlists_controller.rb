@@ -12,6 +12,9 @@ class PlaylistsController < ApplicationController
   end
 
   def export
+    spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+
+    spotify_user.create_playlist!('my-awesome-playlist')
   end
 
   def destroy
