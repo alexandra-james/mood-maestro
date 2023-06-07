@@ -1,1 +1,133 @@
-// Specific CSS for your home-page
+.logo,
+.mood-maestro {
+  position: absolute;
+  top: 30px;
+  left: 22px;
+}
+.mood-maestro {
+  left: 157px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.create-playlist,
+.dashboard {
+  position: relative;
+  text-transform: capitalize;
+}
+.create-playlist {
+  color: var(--highlight);
+}
+.nav-links {
+  position: absolute;
+  top: 34px;
+  left: 830px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-13xl);
+  font-size: var(--font-size-base);
+}
+.navbar-child {
+  position: absolute;
+  top: 24px;
+  left: 1118px;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+}
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1280px;
+  height: 84px;
+  overflow: hidden;
+}
+.homepage-child {
+  position: absolute;
+  top: 82.5px;
+  left: -0.5px;
+  border-top: 1px solid var(--highlight);
+  box-sizing: border-box;
+  width: 1281px;
+  height: 1px;
+}
+.homepage-item,
+.mask-group-icon {
+  position: absolute;
+  top: 35px;
+  left: 207px;
+  width: 3px;
+  height: 17px;
+  object-fit: cover;
+}
+.homepage-item {
+  top: 54px;
+
+  width: 100%;
+  height: 615px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+.container{
+  width: 100%;
+}
+.heading-11 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 46px;
+  font-weight: 600;
+}
+.heading-1 {
+  position: absolute;
+  top: 243px;
+  left: calc(50% - 442px);
+  width: 883px;
+  height: 56px;
+  font-size: var(--font-size-51xl);
+}
+.button-text {
+  position: relative;
+  line-height: 18px;
+}
+.button,
+.main-button,
+.primary-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.button {
+  border-radius: var(--br-5xs);
+  background-color: var(--highlight);
+  padding: var(--padding-mini) var(--padding-41xl);
+  align-items: center;
+}
+.main-button,
+.primary-button {
+  align-items: flex-start;
+}
+.main-button {
+  position: absolute;
+  top: 651px;
+  left: calc(50% - 133px);
+  cursor: pointer;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-darkslategray);
+}
+.homepage {
+  background-color:#2B4570;
+  position: relative;
+  width: 100%;
+  height: 832px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--h4-medium-size);
+  color: var(--color-white);
+  font-family: var(--font-nunito);
+}
