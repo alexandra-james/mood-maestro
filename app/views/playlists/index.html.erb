@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="playlist-list col-lg-5">
+      <h3>Hi <%= current_user.user_name %>, here are your playlists</h3>
+      <hr class="highlight-line">
+      <% @playlists.each do |playlist| %>
+        <div class="playlist-card">
+          <%= playlist.name %>
+          <%= link_to playlist_path(playlist), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+            <i class="fas fa-times"></i>
+          <% end %>
+        </div> <!-- end of class playlist-card -->
+      <% end %> <!-- end of iterations through playlists -->
+    </div> <!-- end of class playlist-list -->
+    <div class="playlist-details col-lg-5">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet rutrum lorem. Integer mattis aliquam dapibus. Quisque lobortis velit at nunc varius efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus rhoncus nulla fringilla orci rutrum imperdiet. Ut blandit vulputate volutpat. Quisque laoreet egestas iaculis. Praesent facilisis pharetra urna, quis pharetra lacus fringilla at. Fusce at erat a nisl placerat fermentum. Cras ultricies sollicitudin quam eget convallis. Curabitur consectetur faucibus leo ut sagittis. Fusce vel ipsum quam. Ut at tempor felis, eu maximus erat.</p>
+    </div> <!-- end of class playlist-details -->
+  </div> <!-- end of bootstrap row -->
+</div> <!-- end of bootstrap container -->
