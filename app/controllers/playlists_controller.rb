@@ -18,5 +18,8 @@ class PlaylistsController < ApplicationController
 
   def destroy
     # delete playlist in the dashboard
+    @playlist = Playlist.find(params[:id])
+    @playlist.destroy
+    redirect_to playlists_path, status: :see_other
   end
 end
