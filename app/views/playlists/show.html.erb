@@ -1,0 +1,10 @@
+<h1>Your new playlist is ready!</h1>
+
+<h2>Playlist name: <%= @playlist.name %></h2>
+
+<h3>Songs</h3>
+<ul>
+  <% @playlist.playlist_songs.each do |song| %>
+    <li><%= song.song.name %></li>
+  <% end %>
+</ul>
