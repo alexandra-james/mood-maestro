@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :recommendations, only: [:new, :create]
 
   # playlists routes
-  # resources :playlist, only: [:new, :create]
+  resources :playlists, only: [:create, :show]
 
   # back from spotify login
   get '/auth/spotify/callback', to: 'playlists#export'
