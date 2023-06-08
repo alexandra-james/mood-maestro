@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :playlists, only: [:create, :show, :index, :destroy]
   get '/api/artist/:artist', to: 'recommendations#search_artist'
   get '/api/song/:song', to: 'recommendations#search_song'
+  post '/create_playlist/:id', to: 'playlists#spotify', as: 'create_spotify_playlist'
 
   # back from spotify login
   get '/auth/spotify/callback', to: 'playlists#export'
