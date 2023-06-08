@@ -6,7 +6,7 @@ class RecommendationsController < ApplicationController
   def create
     artists = params[:artists].split(',')
     songs = params[:songs].split(',')
-    genres = params[:genres]
+    genres = params[:genres].split(',')
     limit = params[:limit]
     # create recommendations
     recommendations = RSpotify::Recommendations.generate(
