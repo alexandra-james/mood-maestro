@@ -4,6 +4,10 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.find(params[:id])
   end
 
+  def index
+    @playlists = Playlist.where(user_id: current_user)
+  end
+
   def export
     # create new playlist on Spotify
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
@@ -14,5 +18,8 @@ class PlaylistsController < ApplicationController
 
   def destroy
     # delete playlist in the dashboard
+    @playlist = Playlist.find(params[:id])
+    @playlist.destroy
+    redirect_to playlists_path, status: :see_other
   end
 end
