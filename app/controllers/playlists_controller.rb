@@ -4,6 +4,10 @@ class PlaylistsController < ApplicationController
     @playlist = Playlist.find(params[:id])
   end
 
+  def index
+    puts "Hello from the playlists controller"
+  end
+
   def export
     # create new playlist on Spotify
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
