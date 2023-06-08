@@ -3,56 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-    />
+
   </head>
   <body>
+
+
     <div class="homepage">
-      <div class="navbar">
-        <div class="logo"></div>
-        <div class="mood-maestro">Mood Maestro</div>
-        <div class="nav-links">
-          <b class="dashboard">Dashboard</b>
-          <b class="create-playlist">+ create Playlist</b>
-        </div>
-        <img class="navbar-child" alt="" src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
-      </div>
-      <%# <div class="homepage-child"></div> %>
-      <img class="mask-group-icon" alt="" src="./public/mask-group@2x.png" />
-      <div class ="container">
-      <img class="homepage-item" alt="" src="https://images.unsplash.com/photo-1466428996289-fb355538da1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" />
-       </div>
+
+      <img class="homepage-image" alt="" src="https://images.unsplash.com/photo-1466428996289-fb355538da1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" />
+
       <div class="heading-1">
         <div class="heading-11">Welcome to MoodMaestro!</div>
-      </div>
-      <div class="main-button" id="mainButtonContainer">
-        <div class="primary-button">
-          <div class="button">
-            <b class="button-text">Create new playlist</b>
-          </div>
-        </div>
-      </div>
+       </div>
+       <button class="button button1">Create a new playlist</button>
     </div>
 
-    <script>
-      var mainButtonContainer = document.getElementById("mainButtonContainer");
-      if (mainButtonContainer) {
-        mainButtonContainer.addEventListener("click", function (e) {
-          window.location.href = "./step-4.html";
-        });
-      }
-      </script>
+
+
   </body>
 </html>
