@@ -1,18 +1,20 @@
 <h1>Recommendations#new</h1>
 <p>Find me in app/views/recommendations/new.html.erb</p>
+<div data-controller="autocomplete" class="form_wrapper">
 
-<form action="/recommendations" method="post">
-  <div class="step_one">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <input type="text" name='artists' placeholder="Search artists"> <br>
-    <input type="text" name="songs" placeholder="Search songs"> <br>
-    <input type="text" name="genres" placeholder="Search genres"> <br>
+  <form action="/recommendations" method="post">
+    <div class="step_one">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="text"  name='artists' placeholder="Search artists" data-autocomplete-target="artists"> <br>
+      <input type="text" name="songs" placeholder="Search songs" data-autocomplete-target="songs"> <br>
+      <input type="text" name="genres" placeholder="Search genres" data-autocomplete-target="genres"> <br>
 
-  </div> <!--end of div step_one-->
+    </div> <!--end of div step_one-->
 
-  <div class="step_two">
-  <input type="number" name="limit" placeholder="Enter number of songs">
+    <div class="step_two">
+    <input type="number" name="limit" placeholder="Enter number of songs">
+    <input type="submit" value="Create">
+    </div> <!--end of div step_two-->
 
-  </div> <!--end of div step_two-->
-  <input type="submit" value="Create">
-</form>
+  </form>
+</div>

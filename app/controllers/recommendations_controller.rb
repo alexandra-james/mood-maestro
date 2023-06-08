@@ -1,16 +1,20 @@
 class RecommendationsController < ApplicationController
-  GENRES = {}
 
   def new
   end
 
   def create
-    # create recommendations
-    artists = params[:artists]
-    songs = params[:songs]
+    artists = params[:artists].split(',')
+    songs = params[:songs].split(',')
     genres = params[:genres]
     limit = params[:limit]
-    recommendations = RSpotify::Recommendations.generate(limit: "#{limit}", seed_artists: ["#{artists}"], seed_tracks: ["#{songs}"], seed_genres: ["#{genres}"])
+    # create recommendations
+    recommendations = RSpotify::Recommendations.generate(
+      limit: limit,
+      seed_artists: artists,
+      seed_tracks: songs,
+      seed_genres: genres
+    )
     @playlist = create_playlist # create playlist
     songs_array = create_songs(recommendations) # create songs from recommendations
     create_playlistsongs(@playlist, songs_array) # create playlistsongs using songs
@@ -54,11 +58,20 @@ class RecommendationsController < ApplicationController
   end
 
   def search_artist
+    artists = params[:artist]
+    @result_artist = RSpotify::Artist.search(artists, limit: 5).to_json
+    p JSON.parse(@result_artist)
+    respond_to do |format|
+      format.json { render json: @result_artist }
+    end
   end
 
   def search_song
-  end
-
-  def search_genre
+    songs = params[:song]
+    @result_song = RSpotify::Track.search(songs, limit: 5).to_json
+    p JSON.parse(@result_song)
+    respond_to do |format|
+      format.json { render json: @result_song }
+    end
   end
 end
