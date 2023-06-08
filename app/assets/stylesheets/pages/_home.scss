@@ -1,41 +1,27 @@
 
-
-.homepage-child {
-  position: absolute;
-  top: 82.5px;
-  left: -0.5px;
-  border-top: 1px solid var(--highlight);
-  box-sizing: border-box;
-  width: 1281px;
-  height: 1px;
-}
-
 .homepage-image {
   top: 84px;
   height: 658px;
   width: 100%;
   opacity:0.5;
 }
-.heading-11 {
-
+.homepage-title{
   line-height: 46px;
   font-weight: 600;
   color: white;
   text-align: center;
   font-size: 50px;
 }
-.heading-1 {
+
+.heading{
   position: absolute;
   top: 243px;
   left: calc(50% - 442px);
   width: 883px;
   height: 56px;
-  // font-size: var(--font-size-51xl);
-
   font-weight: 400;
   font-size: larger;
   font-size: x-large;
-
 }
 
  .homepage{
@@ -60,6 +46,7 @@
   font-family: 'Nunito Sans', sans-serif;
   font-size: bold 16;
 }
+
 .button:hover {
   background-color: #03FCBA;
   color: white;
