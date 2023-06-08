@@ -1,17 +1,12 @@
-
-.homepage-image {
-  height: 658px;
+.homepage-container{
   width: 100%;
-  opacity:0.5;
-}
-.homepage-title{
-  font-weight: 600;
-  color: white;
-  text-align: center;
-  font-size: 50px;
+  background-color:#133161;
+  height: 100vh;
+  padding-bottom: 52%;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-.heading{
+.homepage-title-container{
   position: absolute;
   top: 243px;
   left: calc(50% - 442px);
@@ -20,30 +15,15 @@
   font-weight: 400;
 }
 
- .homepage{
-  width: 100%;
-  background-color:#133161;
-  height: 100vh;
-  padding-bottom: 52%;
-  font-family: 'Nunito Sans', sans-serif;
-
- }
-
-.button {
-  background-color:  #03FCBA;
-  color: black;
-  border: 2px solid #4CAF50;
-  margin-left: 42%;
-  margin-top: 40px;
-  border-radius: 5px;
-  padding-top: 3.5px;
-  padding-bottom: 3.5px;
-  width: 13%;
-  font-family: 'Nunito Sans', sans-serif;
-  font-size: bold 16;
+.homepage-title{
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  font-size: 50px;
 }
 
-.button:hover {
-  background-color: #03FCBA;
-  color: white;
+.homepage-image {
+  height: 658px;
+  width: 100%;
+  opacity: 0.5;
 }
