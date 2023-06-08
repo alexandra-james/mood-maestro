@@ -1,41 +1,4 @@
-
-.mood-maestro {
-  left: 157px;
-  font-weight: 600;
-  color: white;
-  position: absolute;
-}
-
-.dashboard {
-  position: relative;
-  color: white;
-  padding-right: 20px;
-}
-
-.create-playlist {
-  color: #03FCBA;
-}
-
-.nav-links {
-  position: absolute;
-  top: 34px;
-  left: 830px;
-  display: flex;
-  margin-left: 220px;
-}
-
-.navbar-child {
-  position: absolute;
-  top: 24px;
-  left: 1118px;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  object-fit: cover;
-  margin-left: 200px;
-}
-
-.navbar {
+.navbar-container {
   // position: absolute;
   width: 100%;
   height: 84px;
@@ -44,4 +7,41 @@
   border-bottom: 1.5px solid #03FCBA ;
   font-family: 'Nunito Sans', sans-serif;
   z-index: 1;
+}
+
+.navbar-app-name {
+  left: 157px;
+  top: 34px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+}
+
+.navbar-links-container {
+  position: absolute;
+  top: 34px;
+  left: 830px;
+  display: flex;
+  margin-left: 220px;
+}
+
+.navbar-link {
+  position: relative;
+  color: white;
+  padding-right: 20px;
+}
+
+.navbar-link-highlighted {
+  color: #03FCBA;
+}
+
+.navbar-avatar {
+  position: absolute;
+  top: 24px;
+  left: 1118px;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  margin-left: 200px;
 }
