@@ -5,7 +5,7 @@ class PlaylistsController < ApplicationController
   end
 
   def index
-    puts "Hello from the playlists controller"
+    @playlists = Playlist.where(user_id: current_user)
   end
 
   def export
