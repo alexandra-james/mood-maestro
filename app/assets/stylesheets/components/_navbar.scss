@@ -1,12 +1,47 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+
+.mood-maestro {
+  left: 157px;
+  font-weight: 600;
+  color: white;
+  position: absolute;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.dashboard {
+  position: relative;
+  color: white;
+  padding-right: 20px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.create-playlist {
+  color: #03FCBA;
+}
+
+.nav-links {
+  position: absolute;
+  top: 34px;
+  left: 830px;
+  display: flex;
+  margin-left: 220px;
+}
+
+.navbar-child {
+  position: absolute;
+  top: 24px;
+  left: 1118px;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  margin-left: 200px;
+}
+
+.navbar {
+  position: absolute;
+  width: 100%;
+  height: 84px;
+  overflow: hidden;
+  background-color: #2B4570;
+  border-bottom: 1.5px solid #03FCBA ;
+  font-family: 'Nunito Sans', sans-serif;
+  z-index: 1;
 }
