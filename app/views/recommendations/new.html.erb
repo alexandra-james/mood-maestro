@@ -1,20 +1,19 @@
 <h1>Recommendations#new</h1>
-<p>Find me in app/views/recommendations/new.html.erb</p>
 <div data-controller="autocomplete" class="form_wrapper">
-
   <form action="/recommendations" method="post">
-    <div class="step_one">
+    <div class="step-one">
+      <h2>Step 1: Select your starting point</h2>
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <input type="text"  name='artists' placeholder="Search artists" data-autocomplete-target="artists"> <br>
       <input type="text" name="songs" placeholder="Search songs" data-autocomplete-target="songs"> <br>
       <input type="text" name="genres" placeholder="Search genres" data-autocomplete-target="genres"> <br>
-
-    </div> <!--end of div step_one-->
-
-    <div class="step_two">
-    <input type="number" name="limit" placeholder="Enter number of songs">
-    <input type="submit" value="Create">
-    </div> <!--end of div step_two-->
-
+    </div> <!--end of div step-one-->
+    <div class="step-two">
+      <h2>Step 2: Fully customize your playlist</h2>
+      <input type="number" name="limit" placeholder="Enter number of songs">
+      <input type="range" id="acousticness" name="acousticness" min="0" max="1" step="0.01">
+      <label for="acousticness">Acousticness</label>
+      <input type="submit" value="Create">
+    </div> <!--end of div step-two-->
   </form>
 </div>
