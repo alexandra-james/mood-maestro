@@ -18,12 +18,10 @@ class PlaylistsController < ApplicationController
     # create new playlist on Spotify
     # spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
 
-
-    @playlist = RSpotify::User.new(session[:spotify_user]).create_playlist!("test-playlist")
+    @playlist = RSpotify::User.new(session[:spotify_user]).create_playlist!(user_playlist.name)
     # add tracks to playlist
     @song_ids = get_song_ids(user_playlist) #array of song ids to add to playlist
     @playlist.add_tracks!(@song_ids)
-
 
     # set the playlist spotify id for the playlist object
   end
