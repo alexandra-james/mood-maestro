@@ -12,7 +12,7 @@
       <h2>Step 2: Fully customize your playlist</h2>
       <div class="playlist-settings-general">
         <input type="number" id="limit" name="limit" placeholder="Enter number of songs">
-        <input type="text" id="playlist-name" name="playlist-name" placeholder="Enter playlist name">
+        <input type="text" id="playlist_name" name="playlist_name" placeholder="Enter playlist name">
       </div>
       <div class="playlist-settings-parameters">
         <div class="slider-container"> <!--acousticness slider -->
@@ -42,7 +42,7 @@
           <label for="mode">Mode (0-1)</label>
         </div>
         <div class="slider-container"> <!--popularity slider -->
-          <input type="range" id="popularity" name="popularity" min="0" max="1" step="0.01">
+          <input type="range" id="popularity" name="popularity" min="0" max="100" step="1">
           <label for="popularity">Popularity</label>
         </div>
         <div class="slider-container"> <!--speechiness slider -->

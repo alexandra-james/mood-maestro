@@ -43,7 +43,7 @@ class RecommendationsController < ApplicationController
 
   def create_playlist
     playlist = Playlist.new
-    playlist.name = params[:name]
+    playlist.name = params[:playlist_name]
     playlist.user = current_user
     playlist.save
     return playlist
