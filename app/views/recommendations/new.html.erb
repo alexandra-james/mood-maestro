@@ -1,12 +1,13 @@
-<h1>Recommendations#new</h1>
 <div data-controller="autocomplete" class="form_wrapper">
   <form action="/recommendations" method="post">
     <div class="step-one">
       <h2>Step 1: Select your starting point</h2>
       <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="text"  name='artists' placeholder="Search artists" data-autocomplete-target="artists"> <br>
-      <input type="text" name="songs" placeholder="Search songs" data-autocomplete-target="songs"> <br>
-      <input type="text" name="genres" placeholder="Search genres" data-autocomplete-target="genres"> <br>
+      <div class="playlist-settings-seed">
+        <input type="text"  name='artists' placeholder="Search artists" data-autocomplete-target="artists"> <br>
+        <input type="text" name="songs" placeholder="Search songs" data-autocomplete-target="songs"> <br>
+        <input type="text" name="genres" placeholder="Search genres" data-autocomplete-target="genres"> <br>
+      </div>
     </div> <!--end of div step-one-->
     <div class="step-two">
       <h2>Step 2: Fully customize your playlist</h2>
