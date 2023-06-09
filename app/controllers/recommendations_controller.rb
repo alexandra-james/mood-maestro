@@ -43,7 +43,7 @@ class RecommendationsController < ApplicationController
 
   def create_playlist
     playlist = Playlist.new
-    playlist.name = "playlist-test" # TODO- input field for name
+    playlist.name = params[:name]
     playlist.user = current_user
     playlist.save
     return playlist
