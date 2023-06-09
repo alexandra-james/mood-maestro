@@ -10,9 +10,32 @@
     </div> <!--end of div step-one-->
     <div class="step-two">
       <h2>Step 2: Fully customize your playlist</h2>
-      <input type="number" name="limit" placeholder="Enter number of songs">
-      <input type="range" id="acousticness" name="acousticness" min="0" max="1" step="0.01">
-      <label for="acousticness">Acousticness</label>
+      <div class="playlist-settings-general">
+        <input type="number" id="limit" name="limit" placeholder="Enter number of songs">
+        <input type="text" id="playlist-name" name="playlist-name" placeholder="Enter playlist name">
+      </div>
+      <div class="playlist-settings-parameters">
+        <div class="slider-container"> <!--acousticness slider -->
+          <input type="range" id="acousticness" name="acousticness" min="0" max="1" step="0.01">
+          <label for="acousticness">Acousticness</label>
+        </div>
+        <div class="slider-container"> <!--danceability slider -->
+          <input type="range" id="danceability" name="danceability" min="0" max="1" step="0.01">
+          <label for="danceability">Danceability</label>
+        </div>
+        <div class="slider-container"> <!--energy slider -->
+          <input type="range" id="energy" name="energy" min="0" max="1" step="0.01">
+          <label for="energy">Energy</label>
+        </div>
+        <div class="slider-container"> <!--instrumentalness slider -->
+          <input type="range" id="instrumentalness" name="instrumentalness" min="0" max="1" step="0.01">
+          <label for="instrumentalness">Instrumentalness</label>
+        </div>
+        <div class="slider-container"> <!--valence slider -->
+          <input type="range" id="valence" name="valence" min="0" max="1" step="0.01">
+          <label for="valence">Valence</label>
+        </div>
+      </div>
       <input type="submit" value="Create">
     </div> <!--end of div step-two-->
   </form>

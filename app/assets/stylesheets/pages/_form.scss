@@ -14,3 +14,15 @@
   padding: 10px;
 }
 
+.playlist-settings-general {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0px;
+}
+
+.playlist-settings-parameters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 30px 0px;
+}
