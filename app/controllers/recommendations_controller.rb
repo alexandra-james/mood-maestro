@@ -8,12 +8,32 @@ class RecommendationsController < ApplicationController
     songs = params[:songs].split(',')
     genres = params[:genres].split(',')
     limit = params[:limit]
+    acousticness = params[:acousticness]
+    danceability = params[:danceability]
+    energy = params[:energy]
+    instrumentalness = params[:instrumentalness]
+    liveness = params[:liveness]
+    mode = params[:mode]
+    popularity = params[:popularity]
+    speechiness = params[:speechiness]
+    tempo = params[:tempo]
+    valence = params[:valence]
     # create recommendations
     recommendations = RSpotify::Recommendations.generate(
       limit: limit,
       seed_artists: artists,
       seed_tracks: songs,
-      seed_genres: genres
+      seed_genres: genres,
+      target_acousticness: acousticness,
+      target_danceability: danceability,
+      target_energy: energy,
+      target_instrumentalness: instrumentalness,
+      target_liveness: liveness,
+      target_mode: mode,
+      target_popularity: popularity,
+      target_speechiness: speechiness,
+      target_tempo: tempo,
+      target_valence: valence
     )
     @playlist = create_playlist # create playlist
     songs_array = create_songs(recommendations) # create songs from recommendations
@@ -23,7 +43,7 @@ class RecommendationsController < ApplicationController
 
   def create_playlist
     playlist = Playlist.new
-    playlist.name = "playlist-test" # TODO- input field for name
+    playlist.name = params[:playlist_name]
     playlist.user = current_user
     playlist.save
     return playlist

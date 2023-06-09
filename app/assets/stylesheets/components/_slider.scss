@@ -1,0 +1,10 @@
+input[type="range"] {
+  appearance: slider-vertical;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
