@@ -1,8 +1,18 @@
 <div class="navbar-container">
+
   <div class="navbar-app-name">Mood Maestro</div>
+
     <div class="navbar-links-container">
-      <b class="navbar-link">Dashboard</b>
-      <b class="navbar-link-highlighted"> + Create Playlist</b>
+      <% if user_signed_in? %>
+        <b class="navbar-link">Dashboard</b>
+        <b class="navbar-link-highlighted"> + Create Playlist</b>
+        <%= link_to "Logout", destroy_user_session_path,
+                data: {turbo_method: :delete}, class:"navbar-link"  %>
+      <% else %>
+          <%= link_to "Login", new_user_session_path, class:"navbar-link" %>
+        <% end  %>
+      <img class="navbar-avatar" alt="" src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
+
     </div> <!--end div navbar-links -->
-    <img class="navbar-avatar" alt="" src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
+
 </div> <!--end div navbar-container -->
