@@ -9,4 +9,4 @@
   <% end %>
 </ul>
 
-<%= link_to "listen on spotify", create_spotify_playlist_path(@playlist), data: {turbo_method: :post}  %>
+<%= button_to "listen on spotify", create_spotify_playlist_path(@playlist), method: :post, data: {turbo: false}, form: {target: "_blank"} %>
