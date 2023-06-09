@@ -9,27 +9,34 @@ class PlaylistsController < ApplicationController
   end
 
   def spotify
-    playlist = Playlist.find(params[:id])
+    session[:spotify_user] = RSpotify::User.new(request.env['omniauth.auth'])
+    redirect_to root_path, notice: 'Spotify login successful'
+  end
+
+  def export_playlist
+    user_playlist = Playlist.find(params[:id])
     # create new playlist on Spotify
     # spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
-    # spotify_user.create_playlist!(@playlist.name)
+
+
+    @playlist = RSpotify::User.new(session[:spotify_user]).create_playlist!("test-playlist")
     # add tracks to playlist
-    song_ids = get_song_ids(playlist) #array of song ids to add to playlist
-    raise
-    playlist.add_tracks!(song_ids)
-    playlist.tracks.first.name
+    @song_ids = get_song_ids(user_playlist) #array of song ids to add to playlist
+    @playlist.add_tracks!(@song_ids)
+
 
     # set the playlist spotify id for the playlist object
   end
 
   def get_song_ids(playlist)
-    id_array = []
+    @id_array = []
     playlist.playlist_songs.each do |playlistsong|
       song = Song.find(playlistsong.song_id)
       spotify_id = song.spotify_track_id
-      id_array << spotify_id
+      track = RSpotify::Track.find(spotify_id)
+      @id_array << track
     end
-    return id_array
+    return @id_array
   end
 
   def destroy
