@@ -1,0 +1,18 @@
+.footer {
+  background:#133161;
+  border-top: 2px solid #03FCBA ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0px 50px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer .fa-heart {
+  color: #ffffff;
+}
+
+.spotify-logo {
+  width: 90px;
+}
