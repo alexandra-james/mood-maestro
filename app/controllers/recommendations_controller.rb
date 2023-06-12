@@ -1,7 +1,7 @@
 class RecommendationsController < ApplicationController
 
   def new
-    
+
   end
 
   def create
@@ -59,6 +59,7 @@ class RecommendationsController < ApplicationController
         song = Song.new
         song.name = track.name
         song.artist_name = track.artists.first.name # when there are more artists the first one is chosen
+        song.album_name = track.album.name
         song.spotify_track_id = track.id
         song.spotify_image_url = track.album.images.last["url"] # last image is the smallest size of 64x64
         song.duration_ms = track.duration_ms
