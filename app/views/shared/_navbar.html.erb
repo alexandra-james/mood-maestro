@@ -16,7 +16,9 @@
       <% else %>
           <%= link_to "Login", new_user_session_path, class:"navbar-link" %>
         <% end  %>
-      <img class="navbar-avatar" alt="" src=<%= session[:spotify_user]["images"].first["url"] %> />
+      <% if session[:spotify_user].present? %>
+        <img class="navbar-avatar" alt="" src=<%= session[:spotify_user]["images"].first["url"] %> />
+      <% end %>
 
     </div> <!--end div navbar-links -->
 
