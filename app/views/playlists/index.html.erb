@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" data-controller="dashboard">
   <div class="row justify-content-around">
     <div class="playlist-list col-lg-5">
       <h3>Hi <%= current_user.user_name %>, here are your playlists</h3>
       <hr class="highlight-line">
       <% @playlists.reverse_each do |playlist| %>
-        <div class="playlist-card">
+        <div class="playlist-card" data-action="click->dashboard#find_playlist">
           <div class="playlist-card-top">
             <%= playlist.name %>
             <%= link_to playlist_path(playlist), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
