@@ -11,6 +11,7 @@
           </div> <!-- end of song-card-title -->
           <div class="song-card-details">
             <%= song.artist_name %>
+            <%= song.album_name %>
             <%= song.duration_ms.fdiv(60000.0).round(2) %>
           </div> <!-- end of song-card-details -->
         </div>
