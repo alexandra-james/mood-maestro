@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/api/artist/:artist', to: 'recommendations#search_artist'
   get '/api/song/:song', to: 'recommendations#search_song'
   post '/create_playlist/:id', to: 'playlists#export_playlist', as: 'create_spotify_playlist'
+  get '/api/playlist/:id', to: 'playlists#find_playlist'
 
 
   get '/auth/spotify/callback', to: 'playlists#spotify'
