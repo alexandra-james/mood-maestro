@@ -6,14 +6,16 @@
 }
 /* track */
 ::-webkit-scrollbar-track {
-  background: #000000b9;
+  background: #183C77;
 }
 /* handle */
 ::-webkit-scrollbar-thumb {
-  background: #183C77;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
   border-radius: 5px;
 }
 /* handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #666666;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
 }
