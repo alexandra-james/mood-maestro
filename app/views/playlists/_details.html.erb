@@ -1,6 +1,7 @@
-<h3><%= playlist.name %></h3>
+<div data-dashboard-target="details">
+  <h3><%= playlist.name %></h3>
   <hr class="highlight-line">
-  <div>
+  <div class="song-card">
     <% playlist.songs.each do |song| %>
       <%= song.name %>
       <%= song.artist_name %>
@@ -8,3 +9,4 @@
       <%= song.duration_ms %>
     <% end %>
   </div>
+</div>

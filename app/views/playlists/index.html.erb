@@ -25,7 +25,7 @@
       <% end %> <!-- end of iterations through playlists -->
     </div> <!-- end of playlist-list -->
     <div class="playlist-details col-lg-5">
-      <%= render "details" %>
+      <%= render "details", playlist: @playlists.last %>
     </div> <!-- end of playlist-details -->
   </div> <!-- end of bootstrap row -->
 </div> <!-- end of bootstrap container -->

@@ -39,11 +39,10 @@ class PlaylistsController < ApplicationController
 
   def find_playlist
     # method to get playlist details to show in the dashboard
-    playlist = Playlist.find(params[:id])
-    @result_playlist = playlist.to_json
-    JSON.parse(@result_playlist)
+    @playlist = Playlist.find(params[:id])
+
     respond_to do |format|
-      format.json { render json: @result_playlist }
+      format.text {render partial: 'details', locals: {playlist: @playlist}, formats: [:html]}
     end
   end
 
