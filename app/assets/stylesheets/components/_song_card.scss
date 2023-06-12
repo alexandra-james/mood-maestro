@@ -1,0 +1,25 @@
+.song-card {
+  height: 80px;
+  background-color: #183C77;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.song-card-image {
+  padding: 8px;
+}
+
+.song-card-title {
+  font-weight: 500;
+  padding: 5px;
+}
+
+.song-card-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  font-weight: 300;
+  font-size: small;
+  opacity: 0.5;
+}

@@ -1,12 +1,20 @@
 <div data-dashboard-target="details">
   <h3><%= playlist.name %></h3>
   <hr class="highlight-line">
-  <div class="song-card">
+  <div>
     <% playlist.songs.each do |song| %>
-      <%= song.name %>
-      <%= song.artist_name %>
-      <%= song.spotify_image_url %>
-      <%= song.duration_ms %>
+      <div class="song-card">
+        <img src=<%= song.spotify_image_url %> class="song-card-image" alt="">
+        <div class="song-card-text">
+          <div class="song-card-title">
+            <p><%= song.name %></p>
+          </div> <!-- end of song-card-title -->
+          <div class="song-card-details">
+            <%= song.artist_name %>
+            <%= song.duration_ms.fdiv(60000.0).round(2) %>
+          </div> <!-- end of song-card-details -->
+        </div>
+      </div> <!-- end of song-card -->
     <% end %>
   </div>
 </div>
