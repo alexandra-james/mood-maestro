@@ -3,16 +3,12 @@ import TomSelect from "tom-select";
 
 // Connects to data-controller="autocomplete"
 export default class extends Controller {
-  static targets = [ "artists", "songs", "genres", "one", "two", "button", "countries" ];
+  static targets = [ "artists", "songs", "genres", "one", "two", "button" ];
 
   next() {
     this.oneTarget.classList.toggle("d-none");
     this.twoTarget.classList.toggle("d-none");
-    // if (this.buttonTarget.innerHTML === "next") {
-    //   this.buttonTarget.innerHTML = "back";
-    // } else {
-    //   this.buttonTarget.innerHTML = "next";
-    // }
+    
 
   }
   connect() {
@@ -20,7 +16,7 @@ export default class extends Controller {
     const artistsTarget = this.artistsTarget;
     const songsTarget = this.songsTarget;
     const genresTarget = this.genresTarget;
-    const countriesTarget = this.countriesTarget;
+
 
     const search_artist = (item, escape) => { return `<div class="py-2 d-flex">
     <div class="icon me-3">
