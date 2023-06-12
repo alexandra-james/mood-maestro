@@ -11,8 +11,9 @@ class PlaylistsController < ApplicationController
   def spotify
     session[:spotify_user] = RSpotify::User.new(request.env['omniauth.auth'])
     redirect_to root_path, notice: 'Spotify login successful'
-    current_user.spotify_user_id = session[:spotify_user].id
-    current_user.spotify_image_url = session[:spotify_user].images.first.url
+    # setting the user_id and image_url unnecessary as the information can be retrieved from the session 
+    # current_user.spotify_user_id = session[:spotify_user].id
+    # current_user.spotify_image_url = session[:spotify_user].images.first.url
   end
 
   def export_playlist

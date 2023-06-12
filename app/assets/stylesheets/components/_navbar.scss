@@ -37,6 +37,7 @@
 .navbar-link-highlighted {
   color: #03FCBA;
   padding-right: 20px;
+  text-decoration: none;
 }
 
 .navbar-avatar {
@@ -44,4 +45,5 @@
   width: 38px;
   height: 38px;
   object-fit: cover;
+  margin-left: 15px;
 }

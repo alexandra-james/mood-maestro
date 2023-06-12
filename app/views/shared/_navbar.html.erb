@@ -1,18 +1,24 @@
 <div class="navbar-container">
 
   <%= link_to "Mood Maestro", root_path, class:"navbar-app-name" %>
-
+  <% session[:spotify_user] %>
     <div class="navbar-links-container">
       <% if user_signed_in? %>
         <%= link_to "Dashboard", playlists_path, class:"navbar-link" %>
-        <%= link_to "+ Create Playlist", new_recommendation_path, class:"navbar-link" %>
+        <%= link_to "+ Create Playlist", new_recommendation_path, class:"navbar-link-highlighted" %>
         <%= link_to "Logout", destroy_user_session_path,
                 data: {turbo_method: :delete}, class:"navbar-link"  %>
-        <%= link_to 'Sign in with Spotify', '/auth/spotify', method: :post, data: {turbo: false}, class:"navbar-link" %>
+          <% if session[:spotify_user].present? %>
+            <%= session[:spotify_user]["id"] %>
+          <% else %>
+            <%= link_to 'Sign in with Spotify', '/auth/spotify', method: :post, data: {turbo: false}, class:"navbar-link" %>
+          <% end %>
       <% else %>
           <%= link_to "Login", new_user_session_path, class:"navbar-link" %>
         <% end  %>
-      <img class="navbar-avatar" alt="" src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" />
+      <% if session[:spotify_user].present? %>
+        <img class="navbar-avatar" alt="" src=<%= session[:spotify_user]["images"].first["url"] %> />
+      <% end %>
 
     </div> <!--end div navbar-links -->
 
