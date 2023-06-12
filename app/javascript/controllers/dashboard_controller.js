@@ -4,10 +4,13 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   connect() {
   }
-}
 
-const findPlaylist = (query) => {
-  fetch('/api/playlist/:id')
-    .then(response => response.json())
-    .then((data) => console.log("data", data))
-};
+  playlist(event) {
+    const playlistId = event.currentTarget.dataset.id
+    console.log(playlistId)
+    let url = `/api/playlist/${playlistId}`
+    fetch(url)
+      .then(response => response.json())
+      .then((data) => console.log("playlist-details", data))
+  };
+}

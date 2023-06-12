@@ -1,0 +1,10 @@
+<h3><%= playlist.name %></h3>
+  <hr class="highlight-line">
+  <div>
+    <% playlist.songs.each do |song| %>
+      <%= song.name %>
+      <%= song.artist_name %>
+      <%= song.spotify_image_url %>
+      <%= song.duration_ms %>
+    <% end %>
+  </div>

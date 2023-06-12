@@ -4,13 +4,13 @@
       <h3>Hi <%= current_user.user_name %>, here are your playlists</h3>
       <hr class="highlight-line">
       <% @playlists.reverse_each do |playlist| %>
-        <div class="playlist-card" data-action="click->dashboard#find_playlist">
+        <div class="playlist-card" data-action="click->dashboard#playlist" data-id=<%= playlist.id %>>
           <div class="playlist-card-top">
             <%= playlist.name %>
             <%= link_to playlist_path(playlist), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
               <i class="fas fa-times"></i>
             <% end %>
-          </div> <!-- end of class playlist-card-top -->
+          </div> <!-- end of playlist-card-top -->
           <div class="playlist-card-details">
             <div class="playlist-property">
               <p>Created</p>
@@ -20,15 +20,12 @@
               <p>Songs</p>
               <p><%= playlist.playlist_songs.count %></p>
             </div>
-          </div> <!-- end of class playlist-card-details -->
-        </div> <!-- end of class playlist-card -->
+          </div> <!-- end of playlist-card-details -->
+        </div> <!-- end of playlist-card -->
       <% end %> <!-- end of iterations through playlists -->
-    </div> <!-- end of class playlist-list -->
+    </div> <!-- end of playlist-list -->
     <div class="playlist-details col-lg-5">
-      <h3>Playlist Name</h3>
-      <hr class="highlight-line">
-      <p>Song 1</p>
-      <p>Song 2</p>
-    </div> <!-- end of class playlist-details -->
+      <%= render "details" %>
+    </div> <!-- end of playlist-details -->
   </div> <!-- end of bootstrap row -->
 </div> <!-- end of bootstrap container -->
