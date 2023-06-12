@@ -34,7 +34,7 @@ class RecommendationsController < ApplicationController
       target_popularity: popularity,
       target_speechiness: speechiness,
       target_tempo: tempo,
-      target_valence: valence
+      target_valence: valence,
     )
     @playlist = create_playlist # create playlist
     songs_array = create_songs(recommendations) # create songs from recommendations
