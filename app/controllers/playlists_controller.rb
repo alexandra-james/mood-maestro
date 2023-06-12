@@ -37,6 +37,15 @@ class PlaylistsController < ApplicationController
     return @id_array
   end
 
+  def find_playlist
+    # method to get playlist details to show in the dashboard
+    @playlist = Playlist.find(params[:id])
+
+    respond_to do |format|
+      format.text {render partial: 'details', locals: {playlist: @playlist}, formats: [:html]}
+    end
+  end
+
   def destroy
     # delete playlist in the dashboard
     @playlist = Playlist.find(params[:id])
