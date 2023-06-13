@@ -9,4 +9,8 @@
   <% end %>
 </ul>
 
-<%= button_to "listen on spotify", create_spotify_playlist_path(@playlist), method: :post, data: {turbo: false}, form: {target: "_blank"} %>
+<% if session[:spotify_user].present? %>
+  <%= button_to "listen on spotify", create_spotify_playlist_path(@playlist), method: :post, data: {turbo: false}, form: {target: "_blank"} %>
+<% else %>
+  <%= link_to 'Sign in with Spotify', '/auth/spotify', method: :post, data: {turbo: false}, class:"navbar-link" %>
+<% end %>

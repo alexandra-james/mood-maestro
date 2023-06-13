@@ -1,6 +1,6 @@
 
 .progress-title{
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,10 +8,16 @@
 }
 
 .step-one {
+
   justify-content: center;
   margin: auto;
   width: 800px;
   padding: 10px;
+}
+
+.playlist-settings-seed {
+  display: flex;
+  justify-content: space-between;
 }
 
 .step-two {
