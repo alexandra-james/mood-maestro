@@ -3,23 +3,31 @@ import TomSelect from "tom-select";
 
 // Connects to data-controller="autocomplete"
 export default class extends Controller {
-  static targets = [ "artists", "songs", "genres", "one", "two", "button" ];
+  static targets = [ "artists", "songs", "genres", "one", "two", "button", "areset", "sreset", 'genresauto' ];
+
+  resetForm() {
+    console.log("formreset");
+    this.aresetTarget.querySelector("#tomselect-1-ts-control").value = "";
+    this.sresetTarget.querySelector("#tomselect-2-ts-control").value = "";
+    this.genresautoTarget.querySelector("#tomselect-3-ts-control").value = "";
+  }
 
   next() {
     this.oneTarget.classList.toggle("d-none");
     this.twoTarget.classList.toggle("d-none");
-    
+
 
   }
   connect() {
     console.log("Autocomplete connected")
+    console.log(this.genresautoTarget)
     const artistsTarget = this.artistsTarget;
     const songsTarget = this.songsTarget;
     const genresTarget = this.genresTarget;
 
 
-    const search_artist = (item, escape) => { return `<div class="py-2 d-flex">
-    <div class="icon me-3">
+    const search_artist = (item, escape) => { return `<div class="py-2 d-flex" data-action="click->autocomplete#resetForm">
+    <div class="icon me-3" data-action>
       <img class="img-fluid" src="${item.images[0].url}" />
     </div>
     <div>
@@ -34,7 +42,7 @@ export default class extends Controller {
 
     const search_song = (item, escape) => {
       console.log(item);
-      return `<div class="py-2 d-flex">
+      return `<div class="py-2 d-flex" data-action="click->autocomplete#resetForm">
     <div class="icon me-3">
       <img class="img-fluid" src="${item.album.images[0].url}" />
     </div>
@@ -138,7 +146,17 @@ export default class extends Controller {
         "ska", "sleep", "songwriter", "soul", "soundtracks", "spanish", "study", "summer", "swedish", "synth-pop", "tango",
         "techno", "trance", "trip-hop", "turkish", "work-out", "world-music"].map((song) => {
             return {title: song}
-        })
+        }),
+        render: {
+          option: function(data, escape) {
+            return '<div data-action="click->autocomplete#resetForm">' +
+                '<span class="title">' + escape(data.title) + '</span>' +
+              '</div>';
+          },
+          item: function(data, escape) {
+            return '<div title="' + escape(data.title) + '">' + escape(data.title) + '</div>';
+          }
+        }
       ,
       create: false
     });
