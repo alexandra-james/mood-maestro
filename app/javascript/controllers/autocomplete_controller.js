@@ -5,6 +5,12 @@ import TomSelect from "tom-select";
 export default class extends Controller {
   static targets = [ "artists", "songs", "genres", "one", "two", "button", "areset", "sreset" ];
 
+  resetForm() {
+    console.log("formreset");
+    this.aresetTarget.querySelector("#tomselect-1-ts-control").value = "";
+    this.sresetTarget.querySelector("#tomselect-2-ts-control").value = "";
+  }
+
   next() {
     this.oneTarget.classList.toggle("d-none");
     this.twoTarget.classList.toggle("d-none");
@@ -18,7 +24,7 @@ export default class extends Controller {
     const genresTarget = this.genresTarget;
 
 
-    const search_artist = (item, escape) => { return `<div class="py-2 d-flex">
+    const search_artist = (item, escape) => { return `<div class="py-2 d-flex" data-action="click->autocomplete#resetForm">
     <div class="icon me-3" data-action>
       <img class="img-fluid" src="${item.images[0].url}" />
     </div>
@@ -34,7 +40,7 @@ export default class extends Controller {
 
     const search_song = (item, escape) => {
       console.log(item);
-      return `<div class="py-2 d-flex">
+      return `<div class="py-2 d-flex" data-action="click->autocomplete#resetForm">
     <div class="icon me-3">
       <img class="img-fluid" src="${item.album.images[0].url}" />
     </div>
