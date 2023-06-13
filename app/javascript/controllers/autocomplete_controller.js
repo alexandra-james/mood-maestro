@@ -3,12 +3,13 @@ import TomSelect from "tom-select";
 
 // Connects to data-controller="autocomplete"
 export default class extends Controller {
-  static targets = [ "artists", "songs", "genres", "one", "two", "button", "areset", "sreset" ];
+  static targets = [ "artists", "songs", "genres", "one", "two", "button", "areset", "sreset", 'genresauto' ];
 
   resetForm() {
     console.log("formreset");
     this.aresetTarget.querySelector("#tomselect-1-ts-control").value = "";
     this.sresetTarget.querySelector("#tomselect-2-ts-control").value = "";
+    this.genresautoTarget.querySelector("#tomselect-3-ts-control").value = "";
   }
 
   next() {
@@ -19,6 +20,7 @@ export default class extends Controller {
   }
   connect() {
     console.log("Autocomplete connected")
+    console.log(this.genresautoTarget)
     const artistsTarget = this.artistsTarget;
     const songsTarget = this.songsTarget;
     const genresTarget = this.genresTarget;
@@ -144,7 +146,17 @@ export default class extends Controller {
         "ska", "sleep", "songwriter", "soul", "soundtracks", "spanish", "study", "summer", "swedish", "synth-pop", "tango",
         "techno", "trance", "trip-hop", "turkish", "work-out", "world-music"].map((song) => {
             return {title: song}
-        })
+        }),
+        render: {
+          option: function(data, escape) {
+            return '<div data-action="click->autocomplete#resetForm">' +
+                '<span class="title">' + escape(data.title) + '</span>' +
+              '</div>';
+          },
+          item: function(data, escape) {
+            return '<div title="' + escape(data.title) + '">' + escape(data.title) + '</div>';
+          }
+        }
       ,
       create: false
     });
