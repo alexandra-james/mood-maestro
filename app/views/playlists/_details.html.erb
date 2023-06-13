@@ -10,7 +10,11 @@
         <p>Songs</p>
         <p><%= playlist.playlist_songs.count %></p>
       </div>
-      <%= button_to "Listen on Spotify", create_spotify_playlist_path(playlist), method: :post, data: {turbo: false}, form: {target: "_blank"}, class: "btn-spotify-dashboard" %>
+      <% if session[:spotify_user].present? %>
+        <%= button_to "Listen on Spotify", create_spotify_playlist_path(playlist), method: :post, data: {turbo: false}, form: {target: "_blank"}, class: "btn-spotify-dashboard" %>
+      <% else %>
+        <%= link_to 'Sign in with Spotify', '/auth/spotify', method: :post, data: {turbo: false}, class:"navbar-link" %>
+      <% end %>
     </div> <!-- end of playlist-card-details -->
   </div> <!-- end of playlist-details-top -->
   <div class="playlist-details-bottom">

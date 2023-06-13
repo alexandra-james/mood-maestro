@@ -15,7 +15,11 @@
           </div>
         </div> <!-- end of playlist-card-details -->
       </div> <!-- end of playlist-details-top -->
-      <%= button_to "Listen on Spotify", create_spotify_playlist_path(@playlist), method: :post, data: {turbo: false}, form: {target: "_blank"}, class: "btn-green" %>
+      <% if session[:spotify_user].present? %>
+        <%= button_to "Listen on Spotify", create_spotify_playlist_path(@playlist), method: :post, data: {turbo: false}, form: {target: "_blank"}, class: "btn-green" %>
+      <% else %>
+        <%= link_to 'Sign in with Spotify', '/auth/spotify', method: :post, data: {turbo: false}, class:"navbar-link" %>
+      <% end %>
     </div>
     <div class="new-playlist-right col-lg-6">
       <div class="playlist-details-bottom">
