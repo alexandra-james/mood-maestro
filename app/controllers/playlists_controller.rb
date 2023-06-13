@@ -6,12 +6,20 @@ class PlaylistsController < ApplicationController
 
   def index
     @playlists = Playlist.where(user_id: current_user)
+    @playlist_duration = 0
+    @playlists.each do |playlist|
+      playlist.songs.each do |song|
+        duration = song.duration_ms.fdiv(60_000.0).round
+        @playlist_duration += duration
+      end
+    end
+    return @playlist_duration
   end
 
   def spotify
     session[:spotify_user] = RSpotify::User.new(request.env['omniauth.auth'])
     redirect_to root_path, notice: 'Spotify login successful'
-    # setting the user_id and image_url unnecessary as the information can be retrieved from the session 
+    # setting the user_id and image_url unnecessary as the information can be retrieved from the session
     # current_user.spotify_user_id = session[:spotify_user].id
     # current_user.spotify_image_url = session[:spotify_user].images.first.url
   end
