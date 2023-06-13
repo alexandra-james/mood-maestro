@@ -10,13 +10,12 @@
           <div class="line"></div>
           <span data-action="click->autocomplete#next" data-autocomplete-target="button" class="step" >Step 2</span>
         </div>
-        <h2>Step 1: Select your starting point</h2>
       </div> <!--end of div progress title -->
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <div class="playlist-settings-seed">
-          <div class="step-one-cards"><input type="text"  name='artists' placeholder="Search artists" data-autocomplete-target="artists"> <br></div>
-          <div class="step-one-cards"><input type="text" name="songs" placeholder="Search songs" data-autocomplete-target="songs"> <br></div>
-          <div class="step-one-cards"><input type="text" name="genres" placeholder="Search genres" data-autocomplete-target="genres"> <br></div>
+        <div class="playlist-settings-seed row" >
+          <div data-autocomplete-target="areset" class="step-one-cards col-12 col-md-3"> <p>Artists</p> <input type="text"  name='artists' placeholder="Search artists" data-autocomplete-target="artists"> <br></div>
+          <div data-autocomplete-target="sreset" class="step-one-cards col-12 col-md-3"> <p>Songs</p> <input type="text" name="songs" placeholder="Search songs" data-autocomplete-target="songs"> <br></div>
+          <div class="step-one-cards col-12 col-md-3"> <p>Genres</p> <input type="text" name="genres" placeholder="Search genres" data-autocomplete-target="genres"> <br></div>
         </div>
         <div data-action="click->autocomplete#next" data-autocomplete-target="button" class="btn-back">next</div>
     </div> <!--end of div step-one-->

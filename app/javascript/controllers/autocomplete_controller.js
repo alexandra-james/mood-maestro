@@ -3,12 +3,12 @@ import TomSelect from "tom-select";
 
 // Connects to data-controller="autocomplete"
 export default class extends Controller {
-  static targets = [ "artists", "songs", "genres", "one", "two", "button" ];
+  static targets = [ "artists", "songs", "genres", "one", "two", "button", "areset", "sreset" ];
 
   next() {
     this.oneTarget.classList.toggle("d-none");
     this.twoTarget.classList.toggle("d-none");
-    
+
 
   }
   connect() {
@@ -19,7 +19,7 @@ export default class extends Controller {
 
 
     const search_artist = (item, escape) => { return `<div class="py-2 d-flex">
-    <div class="icon me-3">
+    <div class="icon me-3" data-action>
       <img class="img-fluid" src="${item.images[0].url}" />
     </div>
     <div>
