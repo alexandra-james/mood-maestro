@@ -1,25 +1,24 @@
 <div class="navbar-container">
-
-  <%= link_to "Mood Maestro", root_path, class:"navbar-app-name" %>
-  <% session[:spotify_user] %>
-    <div class="navbar-links-container">
-      <% if user_signed_in? %>
-        <%= link_to "Dashboard", playlists_path, class:"navbar-link" %>
-        <%= link_to "+ Create Playlist", new_recommendation_path, class:"navbar-link-highlighted" %>
-        <%= link_to "Logout", destroy_user_session_path,
-                data: {turbo_method: :delete}, class:"navbar-link"  %>
-          <% if session[:spotify_user].present? %>
-            <%= session[:spotify_user]["id"] %>
-          <% else %>
-            <%= link_to 'Sign in with Spotify', '/auth/spotify', method: :post, data: {turbo: false}, class:"navbar-link" %>
-          <% end %>
-      <% else %>
-          <%= link_to "Login", new_user_session_path, class:"navbar-link" %>
-        <% end  %>
-      <% if session[:spotify_user].present? %>
-        <img class="navbar-avatar" alt="" src=<%= session[:spotify_user]["images"].first["url"] %> />
-      <% end %>
-
-    </div> <!--end div navbar-links -->
-
+  <div class="navbar-content">
+    <%= link_to "Mood Maestro", root_path, class:"navbar-app-name" %>
+    <% session[:spotify_user] %>
+      <div class="navbar-links-container">
+        <% if user_signed_in? %>
+          <%= link_to "Dashboard", playlists_path, class:"navbar-link" %>
+          <%= link_to "+ Create Playlist", new_recommendation_path, class:"navbar-link-highlighted" %>
+          <%= link_to "Logout", destroy_user_session_path,
+                  data: {turbo_method: :delete}, class:"navbar-link"  %>
+            <% if session[:spotify_user].present? %>
+              <%= session[:spotify_user]["id"] %>
+            <% else %>
+              <%= link_to 'Sign in with Spotify', '/auth/spotify', method: :post, data: {turbo: false}, class:"navbar-link" %>
+            <% end %>
+        <% else %>
+            <%= link_to "Login", new_user_session_path, class:"navbar-link" %>
+          <% end  %>
+        <% if session[:spotify_user].present? %>
+          <img class="navbar-avatar" alt="" src=<%= session[:spotify_user]["images"].first["url"] %> />
+        <% end %>
+      </div> <!--end div navbar-links -->
+  </div>
 </div> <!--end div navbar-container -->

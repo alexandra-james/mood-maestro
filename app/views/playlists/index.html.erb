@@ -5,22 +5,25 @@
       <hr class="highlight-line">
       <% @playlists.reverse_each do |playlist| %>
         <div class="playlist-card" data-action="click->dashboard#playlist" data-id=<%= playlist.id %>>
-          <div class="playlist-card-top">
-            <%= playlist.name %>
-            <%= link_to playlist_path(playlist), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-              <i class="fas fa-times"></i>
-            <% end %>
-          </div> <!-- end of playlist-card-top -->
-          <div class="playlist-card-details">
-            <div class="playlist-property">
-              <p>Created</p>
-              <p><%=playlist.created_at.strftime('%d %b %Y')%></p>
-            </div>
-            <div class="playlist-property">
-              <p>Songs</p>
-              <p><%= playlist.playlist_songs.count %></p>
-            </div>
-          </div> <!-- end of playlist-card-details -->
+          <%= image_tag('Spotify_Icon_CMYK_White.png', alt: 'Spotify icon', class: "spotify-icon") %>
+          <div class="playlist-card-right">
+            <div class="playlist-card-top">
+              <%= playlist.name %>
+              <%= link_to playlist_path(playlist), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                <i class="fas fa-times"></i>
+              <% end %>
+            </div> <!-- end of playlist-card-top -->
+            <div class="playlist-card-details">
+              <div class="playlist-property">
+                <p>Created</p>
+                <p><%=playlist.created_at.strftime('%d %b %Y')%></p>
+              </div>
+              <div class="playlist-property">
+                <p>Songs</p>
+                <p><%= playlist.playlist_songs.count %></p>
+              </div>
+            </div> <!-- end of playlist-card-details -->
+          </div> <!-- end of playlist-card-right -->
         </div> <!-- end of playlist-card -->
       <% end %> <!-- end of iterations through playlists -->
     </div> <!-- end of playlist-list -->

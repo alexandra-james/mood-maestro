@@ -9,6 +9,22 @@
 }
 
 .playlist-details {
-  width: 100;
   margin-top: 20px;
+  overflow: hidden;
+}
+
+.playlist-details-top {
+
+}
+
+.playlist-details-bottom {
+}
+
+.playlist-bottom-description {
+
+}
+
+.playlist-bottom-songs {
+  height: 60vh;
+  overflow-y: scroll;
 }
