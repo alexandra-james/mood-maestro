@@ -1,21 +1,37 @@
 <div data-dashboard-target="details">
-  <h3><%= playlist.name %></h3>
-  <hr class="highlight-line">
-  <div>
-    <% playlist.songs.each do |song| %>
-      <div class="song-card">
-        <img src=<%= song.spotify_image_url %> class="song-card-image" alt="">
-        <div class="song-card-text">
-          <div class="song-card-title">
-            <p><%= song.name %></p>
-          </div> <!-- end of song-card-title -->
-          <div class="song-card-details">
-            <%= song.artist_name %>
-            <%= song.album_name %>
-            <%= song.duration_ms.fdiv(60000.0).round(2) %>
-          </div> <!-- end of song-card-details -->
-        </div>
-      </div> <!-- end of song-card -->
-    <% end %>
-  </div>
+  <div class="playlist-details-top">
+    <h3><%= playlist.name %></h3>
+    <div class="playlist-card-details">
+      <div class="playlist-property">
+        <p>Created</p>
+        <p><%=playlist.created_at.strftime('%d %b %Y')%></p>
+      </div>
+      <div class="playlist-property">
+        <p>Songs</p>
+        <p><%= playlist.playlist_songs.count %></p>
+      </div>
+    </div> <!-- end of playlist-card-details -->
+  </div> <!-- end of playlist-details-top -->
+  <div class="playlist-details-bottom">
+    <div class="playlist-bottom-description">
+      <hr class="highlight-line">
+    </div> <!-- end of playlist-bottom-description -->
+    <div class="playlist-bottom-songs">
+      <% playlist.songs.each do |song| %>
+        <div class="song-card">
+          <img src=<%= song.spotify_image_url %> class="song-card-image" alt="">
+          <div class="song-card-text">
+            <div class="song-card-title">
+              <p><%= song.name %></p>
+            </div> <!-- end of song-card-title -->
+            <div class="song-card-details">
+              <%= song.artist_name %>
+              <%= song.album_name %>
+              <%= song.duration_ms.fdiv(60000.0).round(2) %>
+            </div> <!-- end of song-card-details -->
+          </div>
+        </div> <!-- end of song-card -->
+      <% end %>
+    </div> <!-- end of playlist-bottom-songs -->
+  </div> <!-- end of playlist-card-bottom -->
 </div>

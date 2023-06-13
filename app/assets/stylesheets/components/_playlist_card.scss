@@ -1,8 +1,19 @@
 .playlist-card {
   height: 80px;
+  display: flex;
   background-color: #183C77;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+.playlist-card-right {
+  flex-grow: 1;
+}
+
+.spotify-icon {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
 }
 
 .playlist-card-top {
@@ -15,6 +26,7 @@
 .playlist-card-details {
   display:flex;
   justify-content: flex-start;
+  padding: 0px 5px 10px;
 
   p {
     font-size: small;
@@ -25,7 +37,7 @@
 }
 
 .playlist-property {
-  margin: 0px 20px;
+  margin-right: 20px;
 }
 
 i {
