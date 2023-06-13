@@ -10,6 +10,7 @@
         <p>Songs</p>
         <p><%= playlist.playlist_songs.count %></p>
       </div>
+      <%= button_to "Listen on Spotify", create_spotify_playlist_path(playlist), method: :post, data: {turbo: false}, form: {target: "_blank"}, class: "btn-spotify-dashboard" %>
     </div> <!-- end of playlist-card-details -->
   </div> <!-- end of playlist-details-top -->
   <div class="playlist-details-bottom">

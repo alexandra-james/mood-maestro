@@ -1,12 +1,50 @@
-<h1>Your new playlist is ready!</h1>
-
-<h2>Playlist name: <%= @playlist.name %></h2>
-
-<h3>Songs</h3>
-<ul>
-  <% @playlist.playlist_songs.each do |song| %>
-    <li><%= song.song.name %></li>
-  <% end %>
-</ul>
-
-<%= button_to "listen on spotify", create_spotify_playlist_path(@playlist), method: :post, data: {turbo: false}, form: {target: "_blank"} %>
+<div class="container container-show">
+  <div class="row justify-content-center">
+    <div class="new-playlist-left col-lg-4">
+      <h2>Your new playlist is ready!</h2>
+      <h4>Playlist name: <%= @playlist.name %></h6>
+      <div class="playlist-details-top">
+        <div class="playlist-card-details">
+          <div class="playlist-property">
+            <p>Created</p>
+            <p><%=@playlist.created_at.strftime('%d %b %Y')%></p>
+          </div>
+          <div class="playlist-property">
+            <p>Songs</p>
+            <p><%= @playlist.playlist_songs.count %></p>
+          </div>
+        </div> <!-- end of playlist-card-details -->
+      </div> <!-- end of playlist-details-top -->
+      <%= button_to "Listen on Spotify", create_spotify_playlist_path(@playlist), method: :post, data: {turbo: false}, form: {target: "_blank"}, class: "btn-green" %>
+    </div>
+    <div class="new-playlist-right col-lg-6">
+      <div class="playlist-details-bottom">
+        <div class="playlist-bottom-description">
+          <%# <hr class="highlight-line"> %>
+        </div> <!-- end of playlist-bottom-description -->
+        <div class="playlist-bottom-songs-show">
+          <% counter = 1 %>
+          <% @playlist.playlist_songs.each do |song| %>
+            <div class="song-card">
+              <p class="song-counter"><%= counter %></p>
+              <div class="image-container">
+                <div style="background-image: url(<%= song.song.spotify_image_url %>)" class="song-card-image"></div>
+              </div>
+              <div class="song-card-text">
+                <div class="song-card-title">
+                  <p><%= song.song.name %></p>
+                </div> <!-- end of song-card-title -->
+                <div class="song-card-details">
+                  <div class="song-property"><%= song.song.artist_name %></div>
+                  <div class="song-property"><%= song.song.album_name %></div>
+                  <div class="song-property"><%= song.song.duration_ms.fdiv(60000.0).round(2) %></div>
+                </div> <!-- end of song-card-details -->
+              </div>
+            </div> <!-- end of song-card -->
+            <% counter += 1 %>
+          <% end %>
+        </div> <!-- end of playlist-bottom-songs -->
+      </div> <!-- end of playlist-card-bottom -->
+    </div>
+  </div>
+</div>
