@@ -19,9 +19,10 @@ class RecommendationsController < ApplicationController
     speechiness = params[:speechiness]
     tempo = params[:tempo]
     valence = params[:valence]
+    market = params[:market]
     # create recommendations
     recommendations = RSpotify::Recommendations.generate(
-      limit: limit,
+      limit:,
       seed_artists: artists,
       seed_tracks: songs,
       seed_genres: genres,
@@ -35,6 +36,7 @@ class RecommendationsController < ApplicationController
       target_speechiness: speechiness,
       target_tempo: tempo,
       target_valence: valence,
+      market:
     )
     @playlist = create_playlist # create playlist
     songs_array = create_songs(recommendations) # create songs from recommendations
