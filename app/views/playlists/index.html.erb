@@ -30,7 +30,9 @@
       </div>
     </div> <!-- end of playlist-list -->
     <div class="col-lg-5">
-      <%= render "details", playlist: @playlists.last %>
+      <% unless @playlists.empty? %>
+        <%= render "details", playlist: @playlists.last %>
+      <% end %>
     </div> <!-- end of playlist-details -->
   </div> <!-- end of bootstrap row -->
 </div> <!-- end of bootstrap container -->
