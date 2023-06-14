@@ -17,69 +17,69 @@
           <div data-autocomplete-target="sreset" class="step-one-cards col-12 col-md-3"> <p>Songs</p> <input type="text" name="songs" placeholder="Search songs" data-autocomplete-target="songs"> <br></div>
           <div class="step-one-cards col-12 col-md-3" data-autocomplete-target='genresauto'> <p>Genres</p> <input type="text" name="genres" placeholder="Search genres" data-autocomplete-target="genres"> <br></div>
         </div>
-        <div data-action="click->autocomplete#next" data-autocomplete-target="button" class="btn-back">next</div>
+        <div data-action="click->autocomplete#next" data-autocomplete-target="button" class="btn-green">next</div>
     </div> <!--end of div step-one-->
 
     <div data-autocomplete-target="two" class="step-two d-none"> <!--start of div step-two-->
       <div class="progress-title">
         <div class="fields">
-        <span data-action="click->autocomplete#next" data-autocomplete-target="button" class="step">Step 1</span>
+          <span data-action="click->autocomplete#next" data-autocomplete-target="button" class="step">Step 1</span>
         <div class="line"></div>
-        <span class="step active" >Step 2</span>
-      </div>
-        <h2>Step 2: Fully customize your playlist</h2>
+          <span class="step active" >Step 2</span>
+        </div>
       </div> <!--end of div progress title -->
 
       <div class="playlist-settings-general">
-        <input type="number" id="limit" name="limit" placeholder="Enter number of songs">
-        <input type="text" id="playlist_name" name="playlist_name" placeholder="Enter playlist name">
+        <div class="general-setting"><input type="number" id="limit" name="limit" placeholder="Enter number of songs"></div>
+        <div class="general-setting"><input type="text" id="playlist_name" name="playlist_name" placeholder="Enter playlist name"></div>
         <input type="hidden" value="DE" id="market" name="market">
       </div>
-      <div class="playlist-settings-parameters">
-        <div class="slider-container"> <!--acousticness slider -->
-          <input type="range" id="acousticness" name="acousticness" min="0" max="1" step="0.01">
-          <label for="acousticness">Acousticness</label>
+      <div class="parameters-container">
+        <div class="playlist-settings-parameters">
+          <div class="slider-container"> <!--acousticness slider -->
+            <input type="range" id="acousticness" name="acousticness" min="0" max="1" step="0.01">
+            <label for="acousticness">Acousticness</label>
+          </div>
+          <div class="slider-container"> <!--danceability slider -->
+            <input type="range" id="danceability" name="danceability" min="0" max="1" step="0.01">
+            <label for="danceability">Danceability</label>
+          </div>
+          <div class="slider-container"> <!--energy slider -->
+            <input type="range" id="energy" name="energy" min="0" max="1" step="0.01">
+            <label for="energy">Energy</label>
+          </div>
+          <div class="slider-container"> <!--instrumentalness slider -->
+            <input type="range" id="instrumentalness" name="instrumentalness" min="0" max="1" step="0.01">
+            <label for="instrumentalness">Instrumentalness</label>
+          </div>
+          <div class="slider-container"> <!--liveness slider -->
+            <input type="range" id="liveness" name="liveness" min="0" max="1" step="0.01">
+            <label for="liveness">Liveness</label>
+          </div>
         </div>
-        <div class="slider-container"> <!--danceability slider -->
-          <input type="range" id="danceability" name="danceability" min="0" max="1" step="0.01">
-          <label for="danceability">Danceability</label>
-        </div>
-        <div class="slider-container"> <!--energy slider -->
-          <input type="range" id="energy" name="energy" min="0" max="1" step="0.01">
-          <label for="energy">Energy</label>
-        </div>
-        <div class="slider-container"> <!--instrumentalness slider -->
-          <input type="range" id="instrumentalness" name="instrumentalness" min="0" max="1" step="0.01">
-          <label for="instrumentalness">Instrumentalness</label>
-        </div>
-        <div class="slider-container"> <!--liveness slider -->
-          <input type="range" id="liveness" name="liveness" min="0" max="1" step="0.01">
-          <label for="liveness">Liveness</label>
-        </div>
+        <div class="playlist-settings-parameters bordertop">
+          <div data-controller="slider" class="slider-container"> <!--mode slider -->
+            <input data-action="input->slider#mode" type="range" id="mode" name="mode" min="0" max="1" step="1">
+            <label data-slider-target="mode" for="mode">Mode: Major</label>
+          </div>
+          <div class="slider-container"> <!--popularity slider -->
+            <input type="range" id="popularity" name="popularity" min="0" max="100" step="1">
+            <label for="popularity">Popularity</label>
+          </div>
+          <div class="slider-container"> <!--speechiness slider -->
+            <input type="range" id="speechiness" name="speechiness" min="0" max="1" step="0.01">
+            <label for="speechiness">Speechiness</label>
+          </div>
+          <div data-controller="slider" class="slider-container"> <!--tempo slider -->
+            <input data-action="input->slider#display" type="range" id="tempo" name="tempo" min="60" max="200" step="1">
+            <label  data-slider-target="bpm" for="tempo">BPM (60-200)</label>
+          </div>
+          <div class="slider-container"> <!--valence slider -->
+            <input type="range" id="valence" name="valence" min="0" max="1" step="0.01">
+            <label for="valence">Positiveness</label>
+          </div>        </div>
       </div>
-      <div class="playlist-settings-parameters">
-        <div class="slider-container"> <!--mode slider -->
-          <input type="range" id="mode" name="mode" min="0" max="1" step="1">
-          <label for="mode">Mode (0-1)</label>
-        </div>
-        <div class="slider-container"> <!--popularity slider -->
-          <input type="range" id="popularity" name="popularity" min="0" max="100" step="1">
-          <label for="popularity">Popularity</label>
-        </div>
-        <div class="slider-container"> <!--speechiness slider -->
-          <input type="range" id="speechiness" name="speechiness" min="0" max="1" step="0.01">
-          <label for="speechiness">Speechiness</label>
-        </div>
-        <div class="slider-container"> <!--tempo slider -->
-          <input type="range" id="tempo" name="tempo" min="60" max="200" step="1">
-          <label for="tempo">BPM (60-200)</label>
-        </div>
-        <div class="slider-container"> <!--valence slider -->
-          <input type="range" id="valence" name="valence" min="0" max="1" step="0.01">
-          <label for="valence">Valence</label>
-        </div>
-      </div>
-      <input type="submit" value="Create">
+      <div class="btn-step-two"> <input type="submit" value="Create" class="btn-green"> </div>
     </div> <!--end of div step-two-->
   </form>
 </div>

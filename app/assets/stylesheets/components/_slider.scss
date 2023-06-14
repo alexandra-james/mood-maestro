@@ -1,10 +1,30 @@
-input[type="range"] {
-  appearance: slider-vertical;
-}
 
 .slider-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  transform: rotate(-90deg);
+  margin: 40px auto;
+  width: 100px;
+  height: 6px;
+  background: #CFD8DC;
+  outline: none;
+  border-radius: 8px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 20px;
+  background: #03FCBA;
+  cursor: pointer;
+  border-radius: 2px;
 }
