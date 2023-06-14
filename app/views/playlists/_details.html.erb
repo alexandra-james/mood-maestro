@@ -1,4 +1,4 @@
-<div data-dashboard-target="details">
+<div data-dashboard-target="details" class="playlist-details">
   <div class="playlist-details-top">
     <h3><%= playlist.name %></h3>
     <div class="playlist-card-details">
@@ -17,31 +17,27 @@
       <% end %>
     </div> <!-- end of playlist-card-details -->
   </div> <!-- end of playlist-details-top -->
+  <hr class="highlight-line">
   <div class="playlist-details-bottom">
-    <div class="playlist-bottom-description">
-      <hr class="highlight-line">
-    </div> <!-- end of playlist-bottom-description -->
-    <div class="playlist-bottom-songs">
-      <% counter = 1 %>
-      <% playlist.songs.each do |song| %>
-        <div class="song-card">
-          <p class="song-counter"><%= counter %></p>
-          <div class="image-container">
-            <div style="background-image: url(<%= song.spotify_image_url %>)" class="song-card-image"></div>
-          </div>
-          <div class="song-card-text">
-            <div class="song-card-title">
-              <p><%= song.name %></p>
-            </div> <!-- end of song-card-title -->
-            <div class="song-card-details">
-              <div class="song-property"><%= song.artist_name %></div>
-              <div class="song-property"><%= song.album_name %></div>
-              <div class="song-property"><%= song.duration_ms.fdiv(60000.0).round(2) %></div>
-            </div> <!-- end of song-card-details -->
-          </div>
-        </div> <!-- end of song-card -->
-        <% counter += 1 %>
-      <% end %>
-    </div> <!-- end of playlist-bottom-songs -->
+    <% counter = 1 %>
+    <% playlist.songs.each do |song| %>
+      <div class="song-card">
+        <p class="song-counter"><%= counter %></p>
+        <div class="image-container">
+          <div style="background-image: url(<%= song.spotify_image_url %>)" class="song-card-image"></div>
+        </div>
+        <div class="song-card-text">
+          <div class="song-card-title">
+            <p><%= song.name.truncate(50) %></p>
+          </div> <!-- end of song-card-title -->
+          <div class="song-card-details">
+            <div class="song-property"><%= song.artist_name.truncate(20) %></div>
+            <div class="song-property"><%= song.album_name.truncate(30) if song.album_name %></div>
+            <div class="song-property"><%= song.duration_ms.fdiv(60000.0).round(2) %></div>
+          </div> <!-- end of song-card-details -->
+        </div>
+      </div> <!-- end of song-card -->
+      <% counter += 1 %>
+    <% end %>
   </div> <!-- end of playlist-card-bottom -->
 </div>
