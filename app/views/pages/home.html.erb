@@ -1,10 +1,11 @@
 <div class="homepage-container">
-  <img class="homepage-image" alt="" src="https://images.unsplash.com/photo-1466428996289-fb355538da1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" />
-  <div class="homepage-title-container">
-    <h1 class="homepage-title">Welcome to MoodMaestro!</h1>
-  </div> <!-- end div homepage-title-container -->
-  <div class="home-btn">
-    
+  <div class="banner" style="background-image: linear-gradient(rgba(19,49,97,0.45),rgba(19,49,97,0.45)), url(https://images.unsplash.com/photo-1466428996289-fb355538da1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);">
+    <div class="container">
+      <h1>Welcome to MoodMaestro!</h1>
+      <p>Create the perfect Spotify playlist for every occasion.</p>
+    </div> <!-- end container -->
+  </div> <!-- end banner -->
+  <div class="home-btn-container">
     <%= link_to "Create a new playlist", new_recommendation_path, class:"btn-green" %>
   </div>
 </div> <!-- end div homepage-container -->
