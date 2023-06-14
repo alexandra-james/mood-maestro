@@ -32,8 +32,8 @@ class PlaylistsController < ApplicationController
     # add tracks to playlist
     @song_ids = get_song_ids(user_playlist) #array of song ids to add to playlist
     @playlist.add_tracks!(@song_ids)
+    sleep(1)
     redirect_to "https://open.spotify.com/playlist/#{@playlist.id}", allow_other_host: true
-
     # set the playlist spotify id for the playlist object
   end
 
