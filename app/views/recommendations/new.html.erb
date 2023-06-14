@@ -23,11 +23,10 @@
     <div data-autocomplete-target="two" class="step-two d-none"> <!--start of div step-two-->
       <div class="progress-title">
         <div class="fields">
-        <span data-action="click->autocomplete#next" data-autocomplete-target="button" class="step">Step 1</span>
+          <span data-action="click->autocomplete#next" data-autocomplete-target="button" class="step">Step 1</span>
         <div class="line"></div>
-        <span class="step active" >Step 2</span>
-      </div>
-        <h2>Step 2: Fully customize your playlist</h2>
+          <span class="step active" >Step 2</span>
+        </div>
       </div> <!--end of div progress title -->
 
       <div class="playlist-settings-general">
@@ -71,13 +70,13 @@
             <input type="range" id="speechiness" name="speechiness" min="0" max="1" step="0.01">
             <label for="speechiness">Speechiness</label>
           </div>
-          <div class="slider-container"> <!--tempo slider -->
-            <input type="range" id="tempo" name="tempo" min="60" max="200" step="1">
-            <label for="tempo">BPM (60-200)</label>
+          <div data-controller="slider" class="slider-container"> <!--tempo slider -->
+            <input data-action="input->slider#display" type="range" id="tempo" name="tempo" min="60" max="200" step="1">
+            <label  data-slider-target="bpm" for="tempo">BPM (60-200)</label>
           </div>
           <div class="slider-container"> <!--valence slider -->
             <input type="range" id="valence" name="valence" min="0" max="1" step="0.01">
-            <label for="valence">Valence</label>
+            <label for="valence">Positiveness</label>
           </div>        </div>
       </div>
       <div class="btn-step-two"> <input type="submit" value="Create" class="btn-green"> </div>
