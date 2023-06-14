@@ -25,7 +25,29 @@
 .playlist-settings-general {
   display: flex;
   justify-content: space-around;
-  margin: 30px 0px;
+  margin: 30px;
+}
+
+#limit {
+  background-color: #183C77;
+    border: unset;
+    border-bottom: 1px solid #03FCBA;
+    border-radius: unset;
+    padding: 4px 4px;
+}
+
+#playlist_name {
+  background-color: #183C77;
+    border: unset;
+    border-bottom: 1px solid #03FCBA;
+    border-radius: unset;
+    padding: 4px 4px;
+}
+
+.general-setting {
+  background-color:#183C77;
+  padding: 10px 10px;
+  border-radius: 15px;
 }
 
 .playlist-settings-parameters {
@@ -35,9 +57,7 @@
   margin: 30px 0px;
 }
 
-.playlist-settings-seed {
 
-}
 
 .step-one-cards {
   display:flex;
@@ -130,4 +150,19 @@ h4 {
   border: 1px solid #03FCBA;
   background-color: #183C77;
   color: white;
+}
+
+// .playlist-settings-parameters {
+//   display:flex;
+//   background-color: #183C77;
+//   padding: 10px 10px;
+//   border-radius: 15px;
+//   margin: 0 auto;
+// }
+
+.parameters-container {
+  background-color: #183C77;
+  padding: 10px 10px;
+  border-radius: 15px;
+  margin: 0 auto;
 }
