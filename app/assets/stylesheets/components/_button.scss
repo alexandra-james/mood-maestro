@@ -16,11 +16,12 @@
   font-family: 'Nunito Sans', sans-serif;
   font-size: bold 16;
   text-align: center;
+  opacity: 1;
 }
 
 .btn-green:hover {
   background-color: #03FCBA;
-  color: white;
+  opacity: 0.7;
 }
 
 .btn-back {
@@ -37,4 +38,18 @@
   text-align: center;
 }
 
+.btn-spotify-dashboard {
+  text-decoration: none;
+  background-color: #03FCBA;
+  opacity: 1;
+  color: black;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: bold 16;
+  text-align: center;
+}
 
+.btn-spotify-dashboard:hover {
+  opacity: 0.7;
+}
