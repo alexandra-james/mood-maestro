@@ -15,3 +15,6 @@ application.register("hello", HelloController)
 
 import SliderController from "./slider_controller"
 application.register("slider", SliderController)
+
+import TypedJsController from "./typed_js_controller"
+application.register("typed-js", TypedJsController)
