@@ -26,6 +26,10 @@
   margin: 0 auto;
 }
 
+#playlist_name {
+  color: white;
+}
+
 
 .playlist-settings-general {
   display: flex;
@@ -39,6 +43,7 @@
     border-bottom: 1px solid #03FCBA;
     border-radius: unset;
     padding: 4px 4px;
+    color: white;
 }
 
 #playlist_name {
@@ -154,6 +159,8 @@ h4 {
 .ts-dropdown {
   border: unset !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  background-color: unset;
+  color: white;
 }
 
 .ts-dropdown .active {
