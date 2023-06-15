@@ -10,7 +10,7 @@
             <div class="playlist-card-right">
               <div class="playlist-card-top">
                 <%= playlist.name %>
-                <%= link_to playlist_path(playlist), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                <%= link_to playlist_path(playlist), data: { turbo_method: :delete } do %>
                   <i class="fas fa-times"></i>
                 <% end %>
               </div> <!-- end of playlist-card-top -->
