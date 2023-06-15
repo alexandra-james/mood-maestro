@@ -85,6 +85,9 @@
   border-radius: 15px;
   margin: 0 auto;
 }
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 
 .step-one-cards > p {
   font-size: x-large;
