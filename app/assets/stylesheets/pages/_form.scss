@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .step-one {
@@ -75,6 +75,7 @@
 }
 
 .step-one-cards {
+  position: relative;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -91,6 +92,20 @@
 
 .step-one-cards > input {
   width: 80%;
+}
+
+.info-msg {
+  display: flex;
+  justify-content: center;
+}
+
+.info-msg > svg {
+  color: white;
+  margin: 4px;
+}
+
+.info-msg > p {
+  margin-bottom: 20px;
 }
 
 .ts-wrapper {
