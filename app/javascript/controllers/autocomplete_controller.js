@@ -3,13 +3,14 @@ import TomSelect from "tom-select";
 
 // Connects to data-controller="autocomplete"
 export default class extends Controller {
-  static targets = [ "artists", "songs", "genres", "one", "two", "button", "areset", "sreset", 'genresauto' ];
+  static targets = [ "artists", "songs", "genres", "one", "two", "button"];
 
   resetForm() {
     console.log("formreset");
-    this.aresetTarget.querySelector("#tomselect-1-ts-control").value = "";
-    this.sresetTarget.querySelector("#tomselect-2-ts-control").value = "";
-    this.genresautoTarget.querySelector("#tomselect-3-ts-control").value = "";
+
+    document.querySelector("#tomselect-1-ts-control").value = "";
+    document.querySelector("#tomselect-2-ts-control").value = "";
+    document.querySelector("#tomselect-3-ts-control").value = "";
   }
 
   next() {
