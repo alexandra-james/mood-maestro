@@ -36,11 +36,11 @@
               </div>
               <div class="song-card-text">
                 <div class="song-card-title">
-                  <p><%= song.song.name %></p>
+                  <p><%= song.song.name.truncate(60) %></p>
                 </div> <!-- end of song-card-title -->
                 <div class="song-card-details">
-                  <div class="song-property"><%= song.song.artist_name %></div>
-                  <div class="song-property"><%= song.song.album_name %></div>
+                  <div class="song-property"><%= song.song.artist_name.truncate(20) %></div>
+                  <div class="song-property"><%= song.song.album_name.truncate(40) if song.song.album_name %></div>
                   <div class="song-property"><%= song.song.duration_ms.fdiv(60000.0).round(2) %></div>
                 </div> <!-- end of song-card-details -->
               </div>
