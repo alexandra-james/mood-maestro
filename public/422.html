@@ -3,65 +3,81 @@
 <head>
   <title>The change you wanted was rejected (422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
+  .maestro-error-page {
+    background-color: #133161;
+    color: white;
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     margin: 0;
   }
 
-  .rails-default-error-page div.dialog {
+  .maestro-error-page div.dialog {
     width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+    height: 50%;
+    margin: 0 auto;
   }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .maestro-error-page div.dialog > div {
+    background-color: #133161;
+    display: flex;
+    flex-direction: column;
   }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+  .maestro-error-page h1 {
+    font-size: 120px;
+    font-weight: 500;
+    color: #03FCBA;
   }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+  .dialog-text > p {
+    padding: 5px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 30px;
   }
+
+  .btn-green {
+  text-decoration: none;
+  background-color:  #03FCBA;
+  color: black;
+  margin: 60px auto;
+  border-radius: 8px;
+  padding: 10px 10px;
+  width: 264px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: bold 16;
+  text-align: center;
+  opacity: 1;
+  border: unset;
+  cursor: pointer;
+}
+
+.btn-green:hover {
+  background-color: #03FCBA;
+  opacity: 0.7;
+}
   </style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="maestro-error-page">
   <!-- This file lives in public/422.html -->
   <div class="dialog">
     <div>
-      <h1>The change you wanted was rejected.</h1>
-      <p>Maybe you tried to change something you didn't have access to.</p>
+      <h1>422</h1>
+      <div class="dialog-text">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-boombox" viewBox="0 0 16 16">
+          <path d="M2.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm7.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm1.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm-7-1a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3Zm5.5 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
+          <path d="M11.5 13a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm0-1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3ZM5 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"/>
+          <path d="M7 10.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm-1 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/>
+          <path d="M14 0a.5.5 0 0 1 .5.5V2h.5a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12.5V.5A.5.5 0 0 1 14 0ZM1 3v3h14V3H1Zm14 4H1v7h14V7Z"/>
+        </svg>
+        <p>The DJ accidentally mixed up the tracks and created a chaotic mashup.</p>
+        <p>We're untangling the beats to restore your preferred playlist. Thanks for your patience!</p>
+        <a href="https://www.moodmaestro.me/" class="btn-green">Back home</a>
+      </div>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
