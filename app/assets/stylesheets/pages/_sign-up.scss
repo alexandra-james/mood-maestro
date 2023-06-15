@@ -1,8 +1,48 @@
+.signup-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .form-inputs {
-  margin: 0 auto;
+  width:60vw;
+}
+
+.form-text {
+  color: white;
 }
 
 .info-msg-sign-up > svg {
-  color: #03FCBA;
-  margin-bottom: 4px;
+  color: white;
+  margin: 4px;
+}
+
+.info-msg-sign-up {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+
+.btn {
+  padding: 4px;
+  color: white;
+  background-color: #1e4b96;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  border: 1px solid #03FCBA;
+}
+
+
+.form-control {
+  background-color: unset;
+  border: 1px solid #03FCBA;
+  color: white;
+}
+
+.form-control:hover {
+  background-color: unset;
+}
+
+.form-control:focus {
+  background-color: unset !important;
 }
