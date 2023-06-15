@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   post '/create_playlist/:id', to: 'playlists#export_playlist', as: 'create_spotify_playlist'
   get '/api/playlist/:id', to: 'playlists#find_playlist'
 
-
+  # spotify callback
   get '/auth/spotify/callback', to: 'playlists#spotify'
+
+  # error pages
+  match '/400', to: 'errors#bad_request', via: :all
+  match '/404', to: 'errors#not_found', via: :all
+  match '/500', to: 'errors#internal_server_error', via: :all
 end

@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   def default_url_options
     { host: ENV["DOMAIN"] || "localhost:3000" }
   end
+
+  rescue_from ActionController::BadRequest do
+    redirect_to '/400'
+  end
 end
